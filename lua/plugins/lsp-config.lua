@@ -10,14 +10,14 @@ return {
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"lua_ls@3.15.0",
-				"clangd",
+				-- "clangd",
 				"vimls",
 				"eslint",
 				"ts_ls",
-				"intelephense",
+				-- "intelephense",
 				-- "phpactor",
-				"sqlls",
-				"pylsp",
+				-- "sqlls",
+				-- "pylsp",
 				"cssls",
 				"html",
 				"jsonls",
@@ -29,6 +29,9 @@ return {
 					})
 				end,
 			},
+		})
+		require('render-markdown').setup({
+			completions = { lsp = { enabled = true } },
 		})
 		-- require("lspconfig")['intelephense'].setup({
 		-- 	settings = {
@@ -67,7 +70,7 @@ return {
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 				vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
 				vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
-				vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
+				-- vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
 				vim.keymap.set("n", "<leader>wl", function()
 					print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 				end, opts)
@@ -107,10 +110,13 @@ return {
 		-- })
 
 		if cmdStates["cursorHold"] == true then
+			local ignoredTypes = { ["markdown"] = 1 }
 			vim.cmd("set updatetime=4000")
 			vim.api.nvim_create_autocmd({ "CursorHoldI" }, {
 				callback = function(ev)
-					vim.lsp.buf.hover({ buffer = ev.buf })
+					if ignoredTypes[vim.bo.filetype] == nil then
+						vim.lsp.buf.hover({ buffer = ev.buf })
+					end
 				end,
 			})
 		end

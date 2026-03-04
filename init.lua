@@ -90,6 +90,18 @@ end, { remap = false })
 -- Highlight whole doc
 vim.keymap.set("n", "<C-a>", "ggVG", {})
 
+-- Toggle word wrap by whole word
+vim.keymap.set(
+    "n",
+    "<leader>wr",
+    function()
+      vim.opt.wrap = not vim.opt.wrap:get()
+      vim.opt.linebreak = vim.opt.wrap:get()
+      vim.cmd(vim.opt.wrap:get() and "Neominimap BufDisable" or "Neominimap BufEnable")
+    end,
+    { desc = "Toggle word wrap" }
+)
+
 -- Map mouse side buttons
 vim.keymap.set("", "<X1Mouse>", "<C-i>", {})
 vim.keymap.set("", "<X2Mouse>", "<C-o>", {})
