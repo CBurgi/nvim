@@ -5,7 +5,7 @@ return {
 		require("autoclose").setup({
 			keys = {
 				["<"] = { escape = false, close = true, pair = "<>" },
-				["'"] = { close = ignoredTypes[vim.bo.filetype] ~= nil },
+				["'"] = { escape = false, close = ignoredTypes[vim.bo.filetype] == nil, pair = "''"},
 				["*"] = { escape = false, close = ignoredTypes[vim.bo.filetype] == nil, pair = "**" }
 			},
       options = {
