@@ -53,7 +53,7 @@ return {
 		end,
 	},
 	{
-		"windwp/nvim-ts-auttag",
+		"windwp/nvim-ts-autotag",
 		config = function ()
 			require('nvim-ts-autotag').setup({
 
