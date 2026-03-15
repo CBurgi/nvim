@@ -11,6 +11,7 @@ return {
 					"c",
 					"lua",
 					"vim",
+					"python",
 					"javascript",
 					"query",
 					"markdown",

@@ -17,7 +17,7 @@ return {
 				-- "intelephense",
 				-- "phpactor",
 				-- "sqlls",
-				-- "pylsp",
+				"pylsp",
 				"cssls",
 				"html",
 				"jsonls",
