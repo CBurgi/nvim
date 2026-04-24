@@ -75,15 +75,20 @@ nnoremap <CR> :noh <CR><CR>:<backspace>
 " Hover when cursor not moved for 2 seconds
 "autocmd CursorHold,CursorHoldI * 
 
+const g:sessionDir = "~/.config/nvim/sessions/"  
+
 " Save session and quit
 autocmd VimLeave * call SaveSess()
 nnoremap <leader>q :wqa<CR>
 nnoremap <leader>ss :call SaveSess()<CR>
 function SaveSess()
     call CloseBlanks(1)
-    const file =  "~/.config/nvim/sessions/" . GetRepo() . ".vim"
+    if !isdirectory(expand(g:sessionDir))
+        call mkdir(expand(g:sessionDir), "p")
+    endif
+    const file = g:sessionDir . GetRepo() . ".vim"
     execute "mksession! " . file
-    echomsg "Made session for " . getcwd()
+    echomsg "Made session for " . GetRepo()
 endfunction
 
 " Load session
@@ -91,9 +96,9 @@ endfunction
 nnoremap <leader>sl :call LoadSess()<CR>
 function LoadSess()
     call CloseBlanks()
-    const file =  "~/.config/nvim/sessions/" . GetRepo() . ".vim"
-    if !filereadable(file)
-      echo "No session for " . file
+    const file =  g:sessionDir . GetRepo() . ".vim"
+    if !filereadable(expand(file))
+      echo "No session for " . GetRepo()
       return ""
     endif
     execute "source " . file
