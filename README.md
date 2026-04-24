@@ -47,3 +47,8 @@
 1. Many errors may appear
 2. Run `:Lazy update`
 3. Run `:TSInstall all`
+
+# Log in to git BEFORE FIRST PUSH
+1. run `git config --global credential.helper store`
+2. make sure you have your GitHub token to use as the password on first push
+

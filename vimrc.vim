@@ -1,11 +1,4 @@
 syntax on " syntax highlighting
-"set termguicolors
-
-" Set session file
-"set sessiondir=~/.config/nvim/sessions
-
-" Autoclose parens
-"so ~/.config/nvim/autoclose.vim
 
 " File formatting
 set fileformat=unix
@@ -88,7 +81,7 @@ nnoremap <leader>q :wqa<CR>
 nnoremap <leader>ss :call SaveSess()<CR>
 function SaveSess()
     call CloseBlanks(1)
-    const file =  globpath(&rtp, 'sessions/') . GetRepo() . ".vim"
+    const file =  "~/.config/nvim/sessions/" . GetRepo() . ".vim"
     execute "mksession! " . file
     echomsg "Made session for " . getcwd()
 endfunction
@@ -98,7 +91,7 @@ endfunction
 nnoremap <leader>sl :call LoadSess()<CR>
 function LoadSess()
     call CloseBlanks()
-    const file =  globpath(&rtp, 'sessions/') . GetRepo() . ".vim"
+    const file =  "~/.config/nvim/sessions/" . GetRepo() . ".vim"
     if !filereadable(file)
       echo "No session for " . file
       return ""
