@@ -43,14 +43,16 @@ set undofile
 " Save global marks on exit
 set viminfo='100,f1
 
-" Copy int windows clipboard
-if has("win32") || has("win64")
-    vnoremap cp "vy :call system('clip.exe', @v)<CR>
-    vnoremap <C-c> "vy :call system('clip.exe', @v)<CR>
-elseif has("unix")
+"" Copy int windows clipboard
+"if has("win32") || has("win64")
+"    vnoremap cp "vy :call system('clip.exe', @v)<CR>
+"    vnoremap <C-c> "vy :call system('clip.exe', @v)<CR>
+"elseif has("unix")
+"    vnoremap cp "+y<CR>
+"    vnoremap <C-c> "+y<CR>
+"endif
     vnoremap cp "+y<CR>
     vnoremap <C-c> "+y<CR>
-endif
 
 " Move lines with alt
 nnoremap <M-j> ddp
