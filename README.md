@@ -1,6 +1,6 @@
 # nvim extra installation steps
 
-## Installing neovim
+# Installing neovim
 1. Enter following lines into command line
     - `curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz`
     - `sudo rm -rf /opt/nvim`
@@ -19,4 +19,17 @@
 ## Ripgrep (for file searching)
 1. In command line enter `sudo apt install ripgrep`
 
+## Config location
+1. cd into `~/.config`
+2. git clone
 
+# Installing languages
+## Node.js and npm
+1. enter the following into command line
+   - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash`
+   - `nvm install node`
+
+# First run
+1. Many errors may appear
+2. Run `:Lazy update`
+3. Run `:TSInstall all`
