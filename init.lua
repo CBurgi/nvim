@@ -52,8 +52,7 @@ vim.keymap.set("n", "S", function()
   -- 1–4: Apply your priority splitting rules
   local line = orig_line
   line = line:gsub("%(", "(\n")
-  line = line:gsub(",%s+", ",\n")
-  line = line:gsub(",", ",\n")
+  line = line:gsub(",[ \t]*", ",\n")
   line = line:gsub("%)", "\n)")
 
   -- Convert single string → table of lines
@@ -88,7 +87,7 @@ vim.keymap.set("n", "S", function()
 end, { remap = false })
 
 -- Highlight whole doc
-vim.keymap.set("n", "<C-a>", "ggVG", {})
+-- vim.keymap.set("n", "<C-a>", "ggVG", {})
 
 -- Toggle word wrap by whole word
 vim.keymap.set(
