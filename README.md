@@ -30,6 +30,9 @@
    b. if you see '-clipboard':
       - run `sudo apt install vim-gtk3` to install a version with clipboard access
       - run `sudo apt install wl-clipboard` to install the Wayland clipboard tool that nvim can use
+
+## Install lazygit
+1. run `sudo apt install lazygit`
    
 
 # Installing languages
