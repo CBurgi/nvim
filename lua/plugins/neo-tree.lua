@@ -28,7 +28,6 @@ return {
         width = 30
       },
 			enable_diagnostics = false,
-			enable_cursor_hijack = true,
 			filesystem = {
 				filtered_items = {
 					visible = true,
