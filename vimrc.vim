@@ -69,6 +69,9 @@ nnoremap <CR> :noh <CR><CR>:<backspace>
 " Hover when cursor not moved for 2 seconds
 "autocmd CursorHold,CursorHoldI * 
 
+" Run fold open on load 
+autocmd BufReadPost,FileReadPost * normal zR
+
 const g:sessionDir = "~/.config/nvim/sessions/"  
 
 " Save session and quit
