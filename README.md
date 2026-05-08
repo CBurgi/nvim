@@ -4,6 +4,7 @@
 # Installing neovim
 1. Enter following lines into command line
     - `curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz`
+      - may need to install curl
     - `sudo rm -rf /opt/nvim`
     - `sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz`
     - `rm nvim-linux-x86_64.tar.gz`
@@ -49,7 +50,7 @@
 # First run
 1. Many errors may appear
 2. Run `:Lazy update`
-3. Run `:TSInstall all`
+3. Run `:TSInstall`
 
 # Log in to git BEFORE FIRST PUSH
 1. run `git config --global credential.helper store`
