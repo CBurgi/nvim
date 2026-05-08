@@ -30,9 +30,9 @@ return {
 				end,
 			},
 		})
-		require('render-markdown').setup({
-			completions = { lsp = { enabled = true } },
-		})
+		-- require('render-markdown').setup({
+		-- 	completions = { lsp = { enabled = true } },
+		-- })
 		-- require("lspconfig")['intelephense'].setup({
 		-- 	settings = {
 		-- 		intelephense = {
@@ -67,7 +67,7 @@ return {
 					vim.diagnostic.jump({ wrap = true, float = true, count = -1 })
 				end, opts)
 				vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts)
-				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+				-- vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 				vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
 				vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
 				-- vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)

@@ -44,47 +44,47 @@ vim.keymap.set("n", "<leader>o", "<cmd>put _<cr>", {})
 vim.keymap.set("n", "<leader>O", "<cmd>put! _<cr>", {})
 
 -- Split parameters
-vim.keymap.set("n", "S", function()
-  local buf = vim.api.nvim_get_current_buf()
-  local row = vim.api.nvim_win_get_cursor(0)[1]
-  local orig_line = vim.api.nvim_get_current_line()
-
-  -- 1–4: Apply your priority splitting rules
-  local line = orig_line
-  line = line:gsub("%(", "(\n")
-  line = line:gsub(",[ \t]*", ",\n")
-  line = line:gsub("%)", "\n)")
-
-  -- Convert single string → table of lines
-  local new_lines = {}
-  for l in line:gmatch("[^\n]+") do
-    table.insert(new_lines, l)
-  end
-
-  -- Replace current line with new lines
-  vim.api.nvim_buf_set_lines(buf, row - 1, row, false, new_lines)
-
-  -- Apply vim auto-indentation to each inserted line
-  for i = 1, #new_lines - 2 do
-    local lnum = row - 1 + i
-
-    -- Use Vim's indent() function to calculate desired indentation
-    local indent = vim.fn.indent(lnum)
-
-    -- If indent() returns 0, use fallback indentation logic
-    if indent == 0 then
-      indent = vim.bo.shiftwidth > 0 and vim.bo.shiftwidth or 4
-    end
-
-    -- Re-indent the line
-    local text = vim.api.nvim_buf_get_lines(buf, lnum, lnum + 1, false)[1]
-    text = string.rep(" ", indent) .. vim.trim(text)
-    vim.api.nvim_buf_set_lines(buf, lnum, lnum + 1, false, { text })
-    end
-
-  -- Move cursor to the first argument line
-  vim.api.nvim_win_set_cursor(0, { row + 1, 0 })
-end, { remap = false })
+-- vim.keymap.set("n", "S", function()
+  -- local buf = vim.api.nvim_get_current_buf()
+  -- local row = vim.api.nvim_win_get_cursor(0)[1]
+  -- local orig_line = vim.api.nvim_get_current_line()
+  --
+  -- -- 1–4: Apply your priority splitting rules
+  -- local line = orig_line
+  -- line = line:gsub("%(", "(\n")
+  -- line = line:gsub(",[ \t]*", ",\n")
+  -- line = line:gsub("%)", "\n)")
+  --
+  -- -- Convert single string → table of lines
+  -- local new_lines = {}
+  -- for l in line:gmatch("[^\n]+") do
+  --   table.insert(new_lines, l)
+  -- end
+  --
+  -- -- Replace current line with new lines
+  -- vim.api.nvim_buf_set_lines(buf, row - 1, row, false, new_lines)
+  --
+  -- -- Apply vim auto-indentation to each inserted line
+  -- for i = 1, #new_lines - 2 do
+  --   local lnum = row - 1 + i
+  --
+  --   -- Use Vim's indent() function to calculate desired indentation
+  --   local indent = vim.fn.indent(lnum)
+  --
+  --   -- If indent() returns 0, use fallback indentation logic
+  --   if indent == 0 then
+  --     indent = vim.bo.shiftwidth > 0 and vim.bo.shiftwidth or 4
+  --   end
+  --
+  --   -- Re-indent the line
+  --   local text = vim.api.nvim_buf_get_lines(buf, lnum, lnum + 1, false)[1]
+  --   text = string.rep(" ", indent) .. vim.trim(text)
+  --   vim.api.nvim_buf_set_lines(buf, lnum, lnum + 1, false, { text })
+  --   end
+  --
+  -- -- Move cursor to the first argument line
+  -- vim.api.nvim_win_set_cursor(0, { row + 1, 0 })
+-- end, { remap = false })
 
 -- Highlight whole doc
 -- vim.keymap.set("n", "<C-a>", "ggVG", {})

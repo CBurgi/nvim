@@ -25,7 +25,7 @@ let matchparen_disable_cursor_hl = 1
 set cursorline " Highlight line cursor is on
 set number " Line numbers
 set relativenumber
-set scrolloff=12 " Stop scrolling when 12 from bottom
+set scrolloff=4 " Stop scrolling when 12 from bottom
 set signcolumn=auto:2 " Show 2 sign columns
 
 " Visuals for commands
@@ -45,17 +45,6 @@ set viminfo='100,f1
 
 vnoremap cp "+y<CR>
 vnoremap <C-c> "+y<CR>
-
-" Move lines with alt
-nnoremap <M-j> ddp
-nnoremap <M-k> ddkP
-nnoremap <C-M-j> yyp
-nnoremap <C-M-k> yyP
-
-vnoremap <M-j> Dp
-vnoremap <M-k> DkP
-vnoremap <C-M-j> YP
-vnoremap <C-M-k> YP
 
 
 " Search settings
