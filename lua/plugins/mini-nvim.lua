@@ -14,7 +14,11 @@ return {
           indent_at_cursor = false
         }
       })
-      require('mini.jump').setup({})
+      require('mini.jump').setup({
+        delay = {
+          idle_stop = 0,
+        },
+      })
       require('mini.basics').setup({
         mappings = {
           basic = false,
@@ -27,14 +31,24 @@ return {
           suffix_last = 'a'
         }
       })
-      require('mini.splitjoin').setup({
-        mappings = {
-          toggle = '',
-          split = 'gs',
-          join = 'gj'
-        }
+      -- require('mini.splitjoin').setup({
+      --   mappings = {
+      --     toggle = '',
+      --     split = '<leader>S',
+      --     join = '<leader>J'
+      --   },
+      --   detect = {
+      --     brackets = { '%b()', '%b[]', '%b{}', '%b""' },
+      --     separator = '[, ]'
+      --   }
+      -- })
+      require('mini.operators').setup({
+        multiply = { prefix = '' }
       })
-      require('mini.operators').setup({})
+      require('mini.operators').make_mappings(
+        'multiply',
+        { textobject = 'cm', line = '<C-A-j>', selection = '<C-A-j)' }
+      )
       require('mini.move').setup({
         mappings = {
           -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.

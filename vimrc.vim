@@ -45,6 +45,20 @@ set viminfo='100,f1
 
 vnoremap cp "+y<CR>
 vnoremap <C-c> "+y<CR>
+if has('wsl')
+  let g:clipboard = {
+    \ 'name': 'wsl-clipboard',
+    \ 'copy': {
+    \    '+': '/mnt/c/Windows/System32/clip.exe',
+    \    '*': '/mnt/c/Windows/System32/clip.exe',
+    \ },
+    \ 'paste': {
+    \    '+': 'powershell.exe -NoProfile -Command [Console]::In.ReadToEnd()',
+    \    '*': 'powershell.exe -NoProfile -Command [Console]::In.ReadToEnd()',
+    \ },
+    \ 'cache_enabled': 1,
+    \ }
+endif
 
 
 " Search settings
@@ -101,10 +115,11 @@ nnoremap <leader>c :call CloseBlanks(1)<CR>
 function! CloseBlanks(all = 0)
   const buf = bufnr('%')
   const win = win_getid()
+  execute "silent! nohlsearch"
   "echo "Buf: " . buf . ", Win: " . win
   execute "windo if &buftype == 'nowrite' || &buftype == 'nofile' || &buftype == 'quickfix' || &buftype == 'help' || (" . a:all . " && @% == '') | close | endif"
   if winnr("$") > 1 && win_id2win(win) != 0
-    execute "call win_gotoid(" . win . ")"
+      execute "call win_gotoid(" . win . ")"
   endif
   "execute "bufdo if &buftype == 'nofile' || &buftype == 'quickfix' || &buftype == 'help' | close | endif"
   "if bufexists(buf)

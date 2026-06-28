@@ -26,6 +26,12 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 -- Find/replace in file
 vim.keymap.set(
 	"n",
+	"rec",
+	":%s/class=/className=<cr>",
+	{ remap = false }
+)
+vim.keymap.set(
+	"n",
 	"<leader>h",
 	":%s/<C-r><C-w>//gc<Left><Left><Left>",
 	{ remap = false, desc = "File Search & Replace" }
@@ -33,7 +39,7 @@ vim.keymap.set(
 vim.keymap.set(
 	"v",
 	"<leader>h",
-	":s/<C-r><C-w>//gc<Left><Left><Left>",
+	"\"ay:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\{\\}\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b//gc<Left><Left><Left> ",
 	{ remap = false, desc = "File Search & Replace" }
 )
 vim.keymap.set("n", "<leader>fw", "/<C-r><C-w><cr>", {})
@@ -87,7 +93,7 @@ vim.keymap.set("n", "<leader>O", "<cmd>put! _<cr>", {})
 -- end, { remap = false })
 
 -- Highlight whole doc
--- vim.keymap.set("n", "<C-a>", "ggVG", {})
+vim.keymap.set("n", "<leader>a", "ggVG", {})
 
 -- Toggle word wrap by whole word
 vim.keymap.set(

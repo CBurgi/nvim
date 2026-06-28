@@ -68,7 +68,8 @@ return {
 				end, opts)
 				vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts)
 				-- vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-				vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+				vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, opts)
+				-- vim.keymap.set("n", "<leader>lh", vim.lsp.buf.signature_help, opts)
 				vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
 				-- vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
 				vim.keymap.set("n", "<leader>wl", function()
@@ -82,7 +83,7 @@ return {
 			end,
 		})
 		-- Autocommands
-		local cmdStates = { ["cursorHold"] = true, ["autoSave"] = true }
+		local cmdStates = { ["cursorHold"] = false, ["autoSave"] = true }
 		local cmdOpts = { ["toggle"] = 1, ["true"] = 1, ["false"] = 1 }
 		local stb = { ["true"] = true, ["false"] = false }
 
