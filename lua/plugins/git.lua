@@ -23,6 +23,14 @@ return {
 				"<cmd>Gitsigns nav_hunk prev<CR>",
 				{}
 			)
+			vim.keymap.set('n', '<leader>gu',
+				"<cmd>Gitsigns reset_hunk<CR>",
+				{}
+			)
+			vim.keymap.set('n', '<leader>gs',
+				"<cmd>Gitsigns stage_hunk<CR>",
+				{}
+			)
 			vim.keymap.set('n', '<leader>gd',
 				"<cmd>Gitsigns preview_hunk_inline<CR>",
 				{}
