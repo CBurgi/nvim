@@ -27,6 +27,10 @@ return {
 				"<cmd>Gitsigns reset_hunk<CR>",
 				{}
 			)
+			vim.keymap.set('n', '<leader>gr',
+				"<cmd>Gitsigns reset_hunk<CR>",
+				{}
+			)
 			vim.keymap.set('n', '<leader>gs',
 				"<cmd>Gitsigns stage_hunk<CR>",
 				{}
