@@ -33,8 +33,9 @@ return {
 			})
 
       local opt = vim.opt
-      opt.foldmethod = "expr"
-      opt.foldexpr = "nvim_treesitter#foldexpr()"
+			opt.foldmethod = "manual"
+      -- opt.foldmethod = "expr"
+      -- opt.foldexpr = "nvim_treesitter#foldexpr()"
 		end,
 	},
 	{
