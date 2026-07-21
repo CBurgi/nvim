@@ -51,7 +51,7 @@ vim.keymap.set(
 vim.keymap.set(
 	"v",
 	"<leader>H",
-	"\"ay:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\{\\}\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b/<C-R>b/gc<Left><Left><Left>",
+	"\"ay:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b/<C-R>a/gc<Left><Left><Left>",
 	{ remap = false, desc = "File Search & Replace" }
 )
 vim.keymap.set("n", "<leader>fw", "/<C-r><C-w><cr>", {})
