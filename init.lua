@@ -32,30 +32,78 @@ vim.keymap.set(
 )
 vim.keymap.set(
 	"n",
-	"<leader>h",
-	":%s/<C-r><C-w>//gc<Left><Left><Left>",
-	{ remap = false, desc = "File Search & Replace" }
+	"<leader>hw",
+	"\"ayiw:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b//gc<Left><Left><Left>",
+	{ remap = false, desc = "File Search & Replace word" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>hl",
+	"\"ayy:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b//gc<Left><Left><Left>",
+	{ remap = false, desc = "File Search & Replace line" }
 )
 vim.keymap.set(
 	"v",
 	"<leader>h",
-	"\"ay:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\{\\}\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b//gc<Left><Left><Left>",
-	{ remap = false, desc = "File Search & Replace" }
+	"\"ay:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b//gc<Left><Left><Left>",
+	{ remap = false, desc = "File Search & Replace selection" }
 )
 vim.keymap.set(
 	"n",
-	"<leader>H",
-	":%s/<C-r><C-w>/<C-r><C-w>/gc<Left><Left><Left>",
-	{ remap = false, desc = "File Search & Replace" }
+	"<leader>Hw",
+	"\"ayiw:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b/<C-R>a/gc<Left><Left><Left>",
+	{ remap = false, desc = "File Search & Replace word with copy" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>Hl",
+	"\"ayy:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b/<C-R>a/gc<Left><Left><Left>",
+	{ remap = false, desc = "File Search & Replace line with copy" }
 )
 vim.keymap.set(
 	"v",
 	"<leader>H",
 	"\"ay:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b/<C-R>a/gc<Left><Left><Left>",
-	{ remap = false, desc = "File Search & Replace" }
+	{ remap = false, desc = "File Search & Replace selection with copy" }
 )
-vim.keymap.set("n", "<leader>fw", "/<C-r><C-w><cr>", {})
-vim.keymap.set("v", "<leader>fw", "/<C-r><C-w><cr>", {})
+vim.keymap.set(
+  "n",
+  "<leader>fw",
+  "\"ayiw:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>/<C-R>b<cr>",
+	{ remap = false, desc = "File Search word" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>fl",
+  "\"ayy:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>/<C-R>b<cr>",
+	{ remap = false, desc = "File Search line" }
+)
+vim.keymap.set(
+  "v",
+  "<leader>f",
+  "\"ay:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>/<C-R>b<cr>",
+	{ remap = false, desc = "File Search selection" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>fx",
+	":noh<cr>",
+	{ remap = false, desc = "noh" }
+)
+
+-- Paste from yank
+vim.keymap.set(
+	"n",
+	"<leader>p",
+	"\"0p",
+	{ remap = false, desc = "Paste from yank register" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>P",
+	"\"0P",
+	{ remap = false, desc = "Paste before from yank register" }
+)
 
 -- Insert blank line
 vim.keymap.set("n", "<leader>o", "<cmd>put _<cr>", {})
