@@ -33,55 +33,55 @@ vim.keymap.set(
 vim.keymap.set(
 	"n",
 	"<leader>hw",
-	"\"ayiw:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b//gc<Left><Left><Left>",
+	"\"ayiw:let @b = substitute(@a, '[\\/\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b//gc<Left><Left><Left>",
 	{ remap = false, desc = "File Search & Replace word" }
 )
 vim.keymap.set(
 	"n",
 	"<leader>hl",
-	"\"ayy:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b//gc<Left><Left><Left>",
+	"\"ayy:let @b = substitute(@a, '[\\/\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b//gc<Left><Left><Left>",
 	{ remap = false, desc = "File Search & Replace line" }
 )
 vim.keymap.set(
 	"v",
 	"<leader>h",
-	"\"ay:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b//gc<Left><Left><Left>",
+	"\"ay:let @b = substitute(@a, '[\\/\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b//gc<Left><Left><Left>",
 	{ remap = false, desc = "File Search & Replace selection" }
 )
 vim.keymap.set(
 	"n",
 	"<leader>Hw",
-	"\"ayiw:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b/<C-R>a/gc<Left><Left><Left>",
+	"\"ayiw:let @b = substitute(@a, '[\\/\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b/<C-R>b/gc<Left><Left><Left>",
 	{ remap = false, desc = "File Search & Replace word with copy" }
 )
 vim.keymap.set(
 	"n",
 	"<leader>Hl",
-	"\"ayy:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b/<C-R>a/gc<Left><Left><Left>",
+	"\"ayy:let @b = substitute(@a, '[\\/\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b/<C-R>b/gc<Left><Left><Left>",
 	{ remap = false, desc = "File Search & Replace line with copy" }
 )
 vim.keymap.set(
 	"v",
 	"<leader>H",
-	"\"ay:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b/<C-R>a/gc<Left><Left><Left>",
+	"\"ay:let @b = substitute(@a, '[\\/\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>:<C-u>%s/<C-R>b/<C-R>b/gc<Left><Left><Left>",
 	{ remap = false, desc = "File Search & Replace selection with copy" }
 )
 vim.keymap.set(
   "n",
   "<leader>fw",
-  "\"ayiw:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>/<C-R>b<cr>",
+  "\"ayiw:let @b = substitute(@a, '[\\/\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>/<C-R>b<cr>",
 	{ remap = false, desc = "File Search word" }
 )
 vim.keymap.set(
   "n",
   "<leader>fl",
-  "\"ayy:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>/<C-R>b<cr>",
+  "\"ayy:let @b = substitute(@a, '[\\/\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>/<C-R>b<cr>",
 	{ remap = false, desc = "File Search line" }
 )
 vim.keymap.set(
   "v",
   "<leader>f",
-  "\"ay:let @b = substitute(@a, '[\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>/<C-R>b<cr>",
+  "\"ay:let @b = substitute(@a, '[\\/\\[\\]\\.\\^\\$\\*\\+\\?\\(\\)\\|]', '\\\\\\0', 'g')<cr>/<C-R>b<cr>",
 	{ remap = false, desc = "File Search selection" }
 )
 vim.keymap.set(
