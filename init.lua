@@ -106,8 +106,8 @@ vim.keymap.set(
 )
 
 -- Insert blank line
-vim.keymap.set("n", "<leader>o", "<cmd>put _<cr>", {})
-vim.keymap.set("n", "<leader>O", "<cmd>put! _<cr>", {})
+vim.keymap.set("n", "<leader>o", "o<esc>", {})
+vim.keymap.set("n", "<leader>O", "O<esc>", {})
 
 -- Split parameters
 -- vim.keymap.set("n", "S", function()
